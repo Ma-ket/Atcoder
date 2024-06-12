@@ -18,3 +18,5 @@ for input in ${inputs[@]}; do
         echo "  ↑正解"
     fi
 done
+
+\rm tmp.txt
