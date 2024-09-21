@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long long f(int a) {
+long long f(long long a) {
     // 階差数列の和
     return a * (a - 1) / 2;
 }
@@ -15,11 +15,17 @@ int main() {
     }
 
     long long cnt = n + (n - 1);
-    int cnt_f = 0;
+    // 差の配列を作成
+    int d[n - 1];
+    for (int l = 0; l < n - 1; l++) {
+        d[l] = a[l] - a[l + 1];
+    }
+
+    long long cnt_f = 0;
     for (i = 1; i < n - 1; i++) {
         if (a[i - 1] - a[i] != a[i] - a[i + 1]) {
             cnt += f(i - cnt_f);
-            cnt_f = i;
+            cnt_f = (long long)i;
         }
     }
     // cnt_f=1 なら0が帰ってくる
@@ -29,4 +35,3 @@ int main() {
 
     return 0;
 }
-
