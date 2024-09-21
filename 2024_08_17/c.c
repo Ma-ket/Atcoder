@@ -9,14 +9,6 @@ int sum(int *array, int len) {
     return cnt;
 }
 
-int fusion(int *arr, int len) {
-    int result = 0;
-    for (int i = 0; i < lne; i++) {
-        result += arr[i] * (int)pow(10, i);
-    }
-    return result;
-}
-
 int max_row(int *arr, int len) {
     int result = 1;
     for (int i = 0; i < len; i++) {
@@ -35,7 +27,6 @@ int main(){
 
     int mx_rw = max_row(r, n);
     int array[mx_rw][n]
-    int r_fus = fusion(r, n);
     for (int i = 0; i < mx_rw; i++) {
         for (int j = n - 1; j >= 0; j--) {  // 数列を作成
             array[i][j] = r[j];
